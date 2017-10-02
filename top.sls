@@ -1,0 +1,5 @@
+'*':
+
+'minion*':
+  - apache
+
