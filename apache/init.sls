@@ -1,18 +1,18 @@
-install_apache:
+apache:
   pkg.installed:
     - pkgs:
-      - httpd
+      - apache2
 
 index_html:
   file.managed:
     - name: /var/www/html/index.html
-    - user: apache
-    - group: apahce
+    - user: www-data
+    - group: www-data
     - mode: 644
     - source: salt://apache/templates/index.html
 
 apache_service:
   service.running:
-    - name: httpd
+    - name: apache2
     - enable: True
 
