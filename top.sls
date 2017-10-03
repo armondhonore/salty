@@ -1,4 +1,5 @@
 '*':
+  - users
 
 'minion*':
   - apache
