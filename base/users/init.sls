@@ -1,4 +1,4 @@
-user_billygoat
+user_billygoat:
   user.present:
     - name: billygoat
     - fullname: Billy Gaot

@@ -1,4 +1,4 @@
-user_troll
+user_troll:
   user.present:
     - name: troll
     - fullname: Bridge Troll
