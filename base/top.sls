@@ -1,8 +1,8 @@
 base:
 
-'*':
-  - users
+  '*':
+    - users
 
-'minion*':
-  - apache
+  'minion*':
+    - apache
 
