@@ -1,4 +1,4 @@
-dev_user_troll:
+#dev_user_troll:
 #  user.present:
 #    - name: troll
 #    - fullname: Bridge Troll
