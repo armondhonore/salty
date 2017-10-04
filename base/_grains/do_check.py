@@ -4,19 +4,22 @@ def do_check():
     # Instantiate grains dictonary
     grains = {}
 
-    # Instantiate grains key cloud Digital Ocean info
-    grains['cloud_info'] = []
+    try:
 
-    base_url = 'http://169.254.169.254/metadata/v1/'
+        # Instantiate grains key cloud Digital Ocean info
+        grains['cloud_info'] = []
 
-    id = urllib2.urlopen(base_url + 'id').read()
-    region = urllib2.urlopen(base_url + 'region').read()
+        base_url = 'http://169.254.169.254/metadata/v1/'
 
-    grains['cloud_info'].append({'provider': 'Digital Ocean'})
-    grains['cloud_info'][0]['droplet_id'] = id
-    grains['cloud_info'][0]['droplet_region'] = region
+        id = urllib2.urlopen(base_url + 'id').read()
+        region = urllib2.urlopen(base_url + 'region').read()
 
-    return grains
+        grains['cloud_info'].append({'provider': 'Digital Ocean'})
+        grains['cloud_info'][0]['droplet_id'] = id
+        grains['cloud_info'][0]['droplet_region'] = region
+        return grains
+    except urllib2.URLError:
+        return False
 
 if __name__ == '__main__':
     do_check()
