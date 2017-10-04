@@ -17,3 +17,5 @@ user_{{ user }}:
     - uid: {{ data['uid'] }}
     - gid_from_name: True
     - groups: []
+
+{% endfor %}
